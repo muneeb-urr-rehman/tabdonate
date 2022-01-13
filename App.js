@@ -8,13 +8,12 @@ import Main from './components/homescreen/Main';
 const Stack = createNativeStackNavigator();
 export default function App() {
 
-  const [login, setLogin] = useState(false)
   return (
     <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="SignUp" component={Signup} />
-          <Stack.Screen name="Main" component={Main} />
+          <Stack.Screen name="Tabdonate" component={Main} />
         </Stack.Navigator>
     </NavigationContainer>
   );

@@ -32,7 +32,7 @@ export default function Login({ navigation }) {
                 onChangeText={(password) => setPassword(password)}
             />
             <TouchableOpacity style={styles.loginBtn}
-                onPress={() => navigation.navigate('Main')}
+                onPress={() => navigation.navigate('Tabdonate')}
             >
                 <Text style={styles.loginText}
                 >Login</Text>
