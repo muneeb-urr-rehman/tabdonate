@@ -11,16 +11,11 @@ export default function App() {
   const [login, setLogin] = useState(false)
   return (
     <NavigationContainer>
-      {
-        login ?
         <Stack.Navigator>
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="SignUp" component={Signup} />
-        :
           <Stack.Screen name="Main" component={Main} />
         </Stack.Navigator>
-
-      }
     </NavigationContainer>
   );
 }

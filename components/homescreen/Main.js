@@ -6,7 +6,7 @@ import Home from './Homescreen';
 
 const Tab = createBottomTabNavigator();
 
-const Main = () => {
+export default function Main () {
     return (
             <Tab.Navigator
                 screenOptions={({ route }) => ({
@@ -33,5 +33,3 @@ const Main = () => {
             </Tab.Navigator>
     );
 }
-
-module.exports = Main;

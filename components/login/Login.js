@@ -6,7 +6,6 @@ import {
     View,
     Image,
     TextInput,
-    Button,
     TouchableOpacity,
 } from "react-native";
 
@@ -32,8 +31,11 @@ export default function Login({ navigation }) {
                 secureTextEntry={true}
                 onChangeText={(password) => setPassword(password)}
             />
-            <TouchableOpacity style={styles.loginBtn}>
-                <Text style={styles.loginText}>Login</Text>
+            <TouchableOpacity style={styles.loginBtn}
+                onPress={() => navigation.navigate('Main')}
+            >
+                <Text style={styles.loginText}
+                >Login</Text>
             </TouchableOpacity>
             <TouchableOpacity>
                 <Text style={styles.forgot_button}>Forgot Password?</Text>
