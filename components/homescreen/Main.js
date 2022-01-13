@@ -4,6 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import History from './History';
 import Home from './Homescreen';
 import Profile from './Profile';
+import About from './About';
 
 const Tab = createBottomTabNavigator();
 
@@ -22,6 +23,8 @@ export default function Main () {
                             iconName = focused ? 'clockcircleo' : 'clockcircleo';
                         } else if (route.name === 'Profile') {
                             iconName = focused ? 'user' : 'user';
+                        } else if (route.name === 'About') {
+                            iconName = focused ? 'question' : 'question';
                         }
 
                         // You can return any component that you like here!
@@ -34,6 +37,7 @@ export default function Main () {
                 <Tab.Screen name="Home" component={Home} />
                 <Tab.Screen name="History" component={History} />
                 <Tab.Screen name="Profile" component={Profile} />
+                <Tab.Screen name="About" component={About} />
             </Tab.Navigator>
     );
 }
