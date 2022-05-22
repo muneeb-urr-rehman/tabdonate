@@ -6,7 +6,6 @@ import {
     View,
     Image,
     TextInput,
-    Button,
     TouchableOpacity,
 } from "react-native";
 
@@ -15,7 +14,32 @@ export default function Signup({ navigation }) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [reEnterPassword, setReEnterPassword] = useState("");
+    function register() {
+        var axios = require('axios');
+        var data = JSON.stringify({
+            "name": `${name}`,
+            "email": `${email}`,
+            "password": `${password}`
+        });
 
+        var config = {
+            method: 'post',
+            url: 'http://192.168.10.7:3000/api/v1/user',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            data: data
+        };
+
+        axios(config)
+            .then(function (response) {
+                console.log(JSON.stringify(response.data));
+                console.log(response.data);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
     return (
         <View style={styles.container}>
             <Image style={styles.image} source={require("../../assets/logo.png")} />
@@ -47,7 +71,7 @@ export default function Signup({ navigation }) {
                 secureTextEntry={true}
                 onChangeText={(reEnterPassword) => setReEnterPassword(reEnterPassword)}
             />
-            <TouchableOpacity style={styles.signupBtn}>
+            <TouchableOpacity style={styles.signupBtn} onPress={register}>
                 <Text style={styles.signupText}>Sign Up</Text>
             </TouchableOpacity>
             <TouchableOpacity>

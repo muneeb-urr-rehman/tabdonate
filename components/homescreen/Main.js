@@ -3,7 +3,7 @@ import * as React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import History from './History';
 import Home from './Homescreen';
-import Profile from './Profile';
+import ContactUs from './ContactUs';
 import About from './About';
 
 const Tab = createBottomTabNavigator();
@@ -21,8 +21,8 @@ export default function Main () {
                                 : 'home';
                         } else if (route.name === 'History') {
                             iconName = focused ? 'clockcircleo' : 'clockcircleo';
-                        } else if (route.name === 'Profile') {
-                            iconName = focused ? 'user' : 'user';
+                        } else if (route.name === 'Contact') {
+                            iconName = focused ? 'contacts' : 'contacts';
                         } else if (route.name === 'About') {
                             iconName = focused ? 'question' : 'question';
                         }
@@ -36,7 +36,7 @@ export default function Main () {
             >
                 <Tab.Screen name="Home" component={Home} />
                 <Tab.Screen name="History" component={History} />
-                <Tab.Screen name="Profile" component={Profile} />
+                <Tab.Screen name="Contact" component={ContactUs} />
                 <Tab.Screen name="About" component={About} />
             </Tab.Navigator>
     );
